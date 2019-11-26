@@ -16,4 +16,4 @@ Before reading about specific transformers, it is helpful to be familiar with th
 
 | Transformer name | Technical link | How To link | 
 | ---------------- | -------------- | ----------- |
-| [template-rgb-plot](https://github.com/AgPipeline/template-rgb-plot) | [Technical]() | [How To](https://github.com/AgPipeline/template-rgb-plot/blob/master/HOW_TO.md) |
+| [template-rgb-plot](https://github.com/AgPipeline/template-rgb-plot) | [Technical](https://github.com/AgPipeline/AgPipeline.github.io/blob/master/transformers/template_rgb_plot.md) | [How To](https://github.com/AgPipeline/template-rgb-plot/blob/master/HOW_TO.md) |
