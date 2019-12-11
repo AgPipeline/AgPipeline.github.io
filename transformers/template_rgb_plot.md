@@ -31,7 +31,7 @@ These last two can be used to install Python modules and system packages needed 
 
 The raw Dockerfile contents are stored as a list of strings in this file.
 These strings are modified as needed when the Dockerfile is written.
-The decision to use this approach, instead of using template files, was made to reduce the footprint of the repository, and to keep the Docker related information in one spot.
+The Dockerfile content is written into a python file rather than a template Docker file in order to reduce the template repository footprint, and to consolidate all of the Docker related information in a single file.
 
 The script, when run, first checks that expected top-level variables are defined in the algorithm_rgb.py file and that some of these variables are not empty.
 Depending upon what the intent of a variable is, it's possible to get away with keeping them empty in the algorithm_rgb.py file.
