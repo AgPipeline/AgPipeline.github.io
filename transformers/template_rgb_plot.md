@@ -10,7 +10,7 @@ We also provide a testing mechanism that can be used to prove the algorithm impl
 This testing mechanism can also be used to track down issues arising in an active processing pipeline.
 
 ## Files
-This section provides technical information on the contents of the file found in the [repository](https://github.com/AgPipeline/template-rgb-plot).
+This section provides technical information on the contents of the files found in the [Template RGB Plot repository](https://github.com/AgPipeline/template-rgb-plot).
 
 This section is not intended to provide information on all the files in the repository, or to replace or document what is implemented in the code.
 There are files in the repository that conform to convention, such as '.gitignore' and are documented elsewhere.
