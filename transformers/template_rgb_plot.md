@@ -14,7 +14,7 @@ This section provides technical information on the contents of the files found i
 
 This section is not intended to provide information on all of the files in the repository, or to replace or document what is implemented in the code.
 There are files in the repository that conform to convention, such as '.gitignore' and are documented elsewhere.
-It is expected that the contents of the files are sufficiently documented so that external documentation isn't needed; this is not to say that there isn't external documentation generated from the source files, only that it's not to be found here.
+It is expected that the contents of the files are sufficiently documented so that external documentation isn't needed (however, it is possible to generate external documentation from the files).
 
 ### algorithm_rgb.py <a name="algorithm_rgb" />
 This is the main file for the algorithm implementation.
