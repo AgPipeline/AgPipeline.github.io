@@ -12,7 +12,7 @@ This testing mechanism can also be used to track down issues arising in an activ
 ## Files
 This section provides technical information on the contents of the files found in the [Template RGB Plot repository](https://github.com/AgPipeline/template-rgb-plot).
 
-This section is not intended to provide information on all the files in the repository, or to replace or document what is implemented in the code.
+This section is not intended to provide information on all of the files in the repository, or to replace or document what is implemented in the code.
 There are files in the repository that conform to convention, such as '.gitignore' and are documented elsewhere.
 It is expected that the contents of the files are sufficiently documented so that external documentation isn't needed; this is not to say that there isn't external documentation generated from the source files, only that it's not to be found here.
 
