@@ -30,7 +30,7 @@ Additionally empty `requirements.txt` and `packages.txt` files are generated.
 These last two can be used to install Python modules and system packages needed by the algorithm into a Docker image.
 
 The raw Dockerfile contents are stored as a list of strings in this file.
-These strings are modified as needed when writing Dockerfile.
+These strings are modified as needed when the Dockerfile is written.
 The decision to use this approach, instead of using template files, was made to reduce the footprint of the repository, and to keep the Docker related information in one spot.
 
 The script, when run, first checks that expected top-level variables are defined in the algorithm_rgb.py file and that some of these variables are not empty.
