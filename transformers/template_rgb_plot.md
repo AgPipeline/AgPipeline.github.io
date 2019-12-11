@@ -21,7 +21,6 @@ This is the main file for the algorithm implementation.
 Its intent is to keep everything that is specific to the algorithm in one place; to serve as the main entry point.
 
 However, for more complicated algorithms, it may be necessary to have additional files that support the algorithm.
-This is anticipated and acceptable.
 
 Note that the default Dockerfile that is [generated](#generate) copies all `.py` files, but not any other file types.
 
