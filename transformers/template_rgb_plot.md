@@ -33,8 +33,7 @@ The raw Dockerfile contents are stored as a list of strings in this file.
 These strings are modified as needed when the Dockerfile is written.
 The Dockerfile content is written into a python file rather than a template Docker file in order to reduce the template repository footprint, and to consolidate all of the Docker related information in a single file.
 
-The script, when run, first checks that expected top-level variables are defined in the algorithm_rgb.py file and that some of these variables are not empty.
-Depending upon what the intent of a variable is, it's possible to get away with keeping them empty in the algorithm_rgb.py file.
+The script, when run, first checks that expected top-level variables are defined in the algorithm_rgb.py file and that these variables are not empty.
 
 Once the script has verified the environment, it creates the empty files and creates a Dockerfile, all of which can be used to build a Docker image.
 
