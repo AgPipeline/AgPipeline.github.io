@@ -36,7 +36,7 @@ The Dockerfile content is written into a python file rather than a template Dock
 The script, when run, first checks that expected top-level variables are defined in the algorithm_rgb.py file and that some of these variables are not empty.
 Depending upon what the intent of a variable is, it's possible to get away with keeping them empty in the algorithm_rgb.py file.
 
-Once the script has verified the environment, it create the empty files and creates a Dockerfile, all of which can be used to build a Docker image.
+Once the script has verified the environment, it creates the empty files and creates a Dockerfile, all of which can be used to build a Docker image.
 
 The script is not intended to run silently.
 It will print which stage its on and any problems or concerns it comes across.
