@@ -34,16 +34,17 @@ As such, there are dependencies on [terrautils](https://github.com/terraref/terr
 
 **Note**: please refer the the [implementation of the Transformer class](https://github.com/AgPipeline/ua-gantry-transformer/blob/master/common-image/transformer_class.py) for an up-to-date description of what the class provides.
 
-To handle the majority of the transformers used to process the gantry data, the following variables, properties, and functions are defined in the AgPipeline's implementation of the [Transformer class](https://github.com/AgPipeline/ua-gantry-transformer/blob/master/common-image/transformer_class.py):\
-*variables*:<a name="transformer_variables" />\
+To handle the majority of the transformers used to process the gantry data, the following variables, properties, and functions are defined in the AgPipeline's implementation of the [Transformer class](https://github.com/AgPipeline/ua-gantry-transformer/blob/master/common-image/transformer_class.py):
+
+*variables*:<a name="transformer_variables" />
 - sensor: the name of the sensor associated with the request (sensor as defined by [TERRA REF project](https://github.com/terraref/terrautils/blob/112d7b6032a677ebcc52868c41bd607e9b0af845/terrautils/sensors.py#L58))
 - args: command line arguments for the current request (see [argparse.ArgumentParser.parse_args()](https://docs.python.org/3/library/argparse.html))
 
-*properties*:<a name="transformer_properties" />\
+*properties*:<a name="transformer_properties" />
 - default_epsg: this returns the EPSG code for the gantry system data and other data (such as plot boundaries) as an integer
 - sensor_name: this returns the value of the [sensor variable](#transformer_variables) in the class instance as a string
 
-*support functions*:<a name="transformer_functions" />\
+*support functions*:<a name="transformer_functions" />
 - get_image_file_epsg(path): returns the file's EPSG code as a string
 - get_image_file_geobounds(path): returns the file's geographic boundaries as a list of X and Y (check the documentation for exact order of returned values)
 - generate_transformer_md(): returns a dictionary containing Transformer attribution fields (name, description, version, author, repository)
