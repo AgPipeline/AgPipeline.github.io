@@ -3,7 +3,7 @@ This is the name given to the portion of a transformer that provides the runtime
 
 Please read the [Transformers](https://github.com/AgPipeline/AgPipeline.github.io/blob/master/transformers/transformers.md) overview documentation for some additional context.
 
-In this document we will be providing an conceptual overview of the code structure and the at the implementation of the UA Makeflow version.
+In this document we will be providing an conceptual overview of the code structure and then uses the implementation of the UA makeflow solution as a practical example.
 
 ## Overview
 As mentioned above, the intention of an Environment Transformer is to provide an organized runtime environment.
@@ -23,27 +23,27 @@ As mentioned above, this class resides in a file named `transformer_class.py` an
 The [Entry Point]() provides the execution framework of a transformer while the [Algorithm]() does the work.
 Both of these rely on the Transformer class to provide an well defined runtime context.
 
-With the AgPipeline, the Entry Point expects the Transformer class to provide a mandatory function that arranges parameters for algorithms, and to provide some (optional) functions for defining command line parameters and downloading data.
-What this means is that the Transformer class needs to provide the data Algorithms expect in the format they expect it to be.
-Additionally, since Algorithms receive an instance of the Transformer class as a parameter, they can expect additional functions to be implemented by the class.
-To simplify the development of Transformer classes, the AgPipeline defines a standard interface for all Algorithms; satisfying this interface requirement means that an implementation of a single Transformer class can be used by any of these Algorithms.
+With the AgPipeline, the Entry Point implementation expects the Transformer class to provide a (mandatory) *get_transformer_params()* function that arranges function parameters for algorithms, and to provide some (implementation dependent) functions for defining command line parameters and downloading data.
+What this means is that the Transformer class needs to provide the data Algorithm code expects in the format expected.
+Additionally, since Algorithms receive an instance of the Transformer class as a parameter, they also expect any additional, necessary, functions to be implemented by the class.
+To simplify the development of Transformer classes, the AgPipeline defines a standard interface for all Algorithms; satisfying these interface requirements means that an implementation of a single Transformer class can be used by any of these Algorithms.
 
 ## AgPipeline Implementation
 The AgPipeline is descended from the [TERRA REF](https://github.com/terraref) project as described in the [Organization Info](https://github.com/AgPipeline/Organization-info) repository and elsewhere.
 As such, there are dependencies on [terrautils](https://github.com/terraref/terrautils) which is a [Python library](https://pypi.org/project/terrautils/) and the metadata provided by the [gantry](https://terraref.org/) system.
 
-**Note**: refer the the [implementation of the Transformer class](https://github.com/AgPipeline/ua-gantry-transformer/blob/master/common-image/transformer_class.py) for an up-to-date description of what the class provides.
+**Note**: please refer the the [implementation of the Transformer class](https://github.com/AgPipeline/ua-gantry-transformer/blob/master/common-image/transformer_class.py) for an up-to-date description of what the class provides.
 
-To handle the majority of the transformers used to process the gantry data, the following variables, properties, and functions are defined in the AgPipeline's implementation of the [Transformer class](https://github.com/AgPipeline/ua-gantry-transformer/blob/master/common-image/transformer_class.py):
-*variables*:<a name="transformer_variables" /> \
+To handle the majority of the transformers used to process the gantry data, the following variables, properties, and functions are defined in the AgPipeline's implementation of the [Transformer class](https://github.com/AgPipeline/ua-gantry-transformer/blob/master/common-image/transformer_class.py):\
+*variables*:<a name="transformer_variables" />\
 - sensor: the name of the sensor associated with the request (sensor as defined by [TERRA REF project](https://github.com/terraref/terrautils/blob/112d7b6032a677ebcc52868c41bd607e9b0af845/terrautils/sensors.py#L58))
 - args: command line arguments for the current request (see [argparse.ArgumentParser.parse_args()](https://docs.python.org/3/library/argparse.html))
 
-*properties*:<a name="transformer_properties" /> \
+*properties*:<a name="transformer_properties" />\
 - default_epsg: this returns the EPSG code for the gantry system data and other data (such as plot boundaries) as an integer
 - sensor_name: this returns the value of the [sensor variable](#transformer_variables) in the class instance as a string
 
-*support functions*:<a name="transformer_functions" /> \
+*support functions*:<a name="transformer_functions" />\
 - get_image_file_epsg(path): returns the file's EPSG code as a string
 - get_image_file_geobounds(path): returns the file's geographic boundaries as a list of X and Y (check the documentation for exact order of returned values)
 - generate_transformer_md(): returns a dictionary containing Transformer attribution fields (name, description, version, author, repository)
