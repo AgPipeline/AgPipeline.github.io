@@ -1,19 +1,19 @@
-# Environmental Transformers
+# Environmental
 This is the name given to the portion of a transformer that provides the runtime environment.
 
 Please read the [Transformers](https://github.com/AgPipeline/AgPipeline.github.io/blob/master/transformers/transformers.md) overview documentation for some additional context.
 
-In this document we will be providing an conceptual overview of the code structure and then uses the implementation of the UA makeflow solution as a practical example.
+In this document we will be providing an conceptual overview of the Environmental code structure and then uses the implementation of the UA makeflow solution as a practical example.
 
 ## Overview
 As mentioned above, the intention of an Environment Transformer is to provide an organized runtime environment.
 This allows the algorithms to become simplified since they don't need to bother with the details of what their actual environment is.
 
-As implemented in the AgPipeline environment, the expectation is that there's a messaging system that triggers the transformer.
+As implemented in the AgPipeline makeflow environment, the flow of control through a transformer can support both a messaging system that triggers the transformer, or running directly from a command line.
 To this end, the Environment Transformer provides hooks to perform the following tasks:
-1. Adds parameters for command line processing (optional)
-2. Performs downloads of any data that's not available to the algorithm (optional)
-3. Provides a well defined set of parameters to the algorithm
+1. Add parameters for command line processing (optional)
+2. Perform downloads of any data that's to be made available to the algorithm (optional)
+3. Provide a well defined set of parameters to the algorithm
 
 Given the context-sensitive nature of an Environmental Transformer, the handlers for these tasks are implemented with a class named 'Transformer' in a file named `transformer_class.py` for easy separation.
 This allows for the easy customization of run-time environments for any Algorithm Transformer; just copy the `transformer_class.py` file, and any supporting files, over an existing transformer and it's ready for a new environment.
