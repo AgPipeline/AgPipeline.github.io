@@ -49,7 +49,7 @@ To handle the majority of the Algorithm implementations used to process the gant
 - get_image_file_geobounds(path): returns the file's geographic boundaries as a list of X and Y (check the documentation for exact order of returned values)
 - generate_transformer_md(): returns a dictionary containing Transformer attribution fields (name, description, version, author, repository)
 
-To support the workflow, the following functions are implemented by the [Transformer class](https://github.com/AgPipeline/ua-gantry-transformer/blob/master/common-image/transformer_class.py) and should **not** be used elsewhere.
+Other functions: to support the workflow, the following functions are implemented by the [Transformer class](https://github.com/AgPipeline/ua-gantry-transformer/blob/master/common-image/transformer_class.py) and should **not** be used elsewhere.
 
 - add_parameters(self, parser: argparse.ArgumentParser): adds parameters and other information for command line processing
 - get_transformer_params(self, args: argparse.Namespace, metadata: dict): prepares parameters which are passed on to Algorithm code
