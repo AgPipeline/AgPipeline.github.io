@@ -1,5 +1,5 @@
 # RGB Plot Transformer - Technical information
-This document contain information on what the goals of the this Transformer are and how the repository is structured.
+This document contain information on what the goals of this Transformer are and how the repository is structured.
 Also, information on the contents and intent of each of the executable and dependency files is provided (dependency files are files that upstream components are dependent upon).
 
 ## Goals
