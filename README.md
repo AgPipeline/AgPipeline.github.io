@@ -12,7 +12,7 @@ If you are finding problems with the documentation, or have requests or ideas on
 <!-- Please provide links to the documents listed below -->
 <!-- Use the repository name in the "Transformer name" column" -->
 **Transformers**
-Before reading about specific transformers, it is helpful to be familiar with the [conceptual basis](https://github.com/AgPipeline/AgPipeline.github.io/blob/master/transformers/transformers.md) for these transformers.
+Before reading about specific transformers, it is helpful to be familiar with the [conceptual basis](https://agpipeline.github.io/transformers/transformers) for these transformers.
 
 | Transformer name | Technical link | How To link | 
 | ---------------- | -------------- | ----------- |

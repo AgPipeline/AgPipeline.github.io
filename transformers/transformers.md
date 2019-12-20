@@ -71,16 +71,16 @@ This is accomplished logistically by encapsulating the context in a class and pa
 
 What this means in practical terms is that transformers for different environments can use the same [Entry Point](#entry-point) and [Algorithm](#algorithm) code.
 In the AgPipeline code base, this is accomplished by creating different implementations of the Transformer class.
-For example, the common_image folder in the [ua-gantry-transformer](https://github.com/AgPipeline/ua-gantry-transformer/tree/master/common-image) repository, or the base_transformer_class folder in the [drone-pipeline-transformer](https://github.com/AgPipeline/drone-pipeline-transformer/tree/master/base-transformer-class) repository.
+For example, the common_image folder in the [ua-gantry-environment](https://github.com/AgPipeline/ua-gantry-environment/tree/master/common-image) repository, or the base_transformer_class folder in the [drone-pipeline-environment](https://github.com/AgPipeline/drone-pipeline-environment/tree/master/base-transformer-class) repository.
 
-The [ua-gantry-transformer](https://github.com/AgPipeline/ua-gantry-transformer/tree/master/common-image) implementation of the Transformer class uses the metadata and working space specified on the command line to obtain its request environment, initialize its instance, provide a standard set of data for the Algorithm, and specifies a standard set of Algorithm parameters.
+The [ua-gantry-environment](https://github.com/AgPipeline/ua-gantry-environment/tree/master/common-image) implementation of the Transformer class uses the metadata and working space specified on the command line to obtain its request environment, initialize its instance, provide a standard set of data for the Algorithm, and specifies a standard set of Algorithm parameters.
 
 This frees the [Algorithm](#algorithm) code from having any specialized knowledge of its execution environment. 
 
-Please refer to the documentation (TBD) for detailed information on an implementation of this Type.
+Please refer to the [Environmental documentation](https://agpipeline.github.io/transformers/environment) for detailed information on an implementation of this Type.
 
 ### Algorithm <a name="algorithm" />
-Now that the workflow is defined by the [Entry Point](#entry-point) Type and the environment is standardized by the [Environmental](environment) Type, the algorithm can focus on processing the data it receives.
+Now that the workflow is defined by the [Entry Point](#entry-point) Type and the environment is standardized by the [Environmental](#environment) Type, the algorithm can focus on processing the data it receives.
 
 Algorithms can be everything from [scrubbing and standardizing metadata](https://github.com/AgPipeline/transformer-cleanmetadata) to [calculating canopy height](https://github.com/AgPipeline/transformer-las2height) on a plot-level basis.
 When combined with the workflow implemented by the [Entry Point](#entry-point) Type and a specific [Environmental](#environment) Type, one has a complete transformer.
@@ -90,7 +90,7 @@ For the AgPipeline organization, this means [plot-level](plot-level) Algorithms 
 Each of the implementations for these plot-level datum is represented by a distinct Algorithm Type that handles the details of looking for and loading data, understanding the common environment, and other tasks (such as knowing the plot name).
 The writer of Scientific algorithms that work on the plot level only needs to process the actual data and produce the results.
 
-Please refer to the documentation (TBD) for detailed information on this Type.
+Please refer to the [Algorithm documentation](https://agpipeline.github.io/transformers/algorithm) for detailed information on this Type.
 
 ### Plot-level <a name="plot-level" />
 This type significantly reduces the overhead associated with creating a transformer.
@@ -101,10 +101,10 @@ This will allow the analysis developer to focus on implementing their piece of t
 
 In addition to providing as simple a solution to writing analysis code as possible, providing a common means of testing the solution can bring confidence that the solution has met the minimum requirements and should work as expected.
 
-Please refer to the documentation (TBD) for detailed information on this Type.
+Please refer to the [plot-level RGB documentation](https://agpipeline.github.io/transformers/template_rgb_plot) for detailed information on this Type as implemented for RGB data.
 
 ### Override Entry Point <a name="override" />
-This Type is for the situations where the existing flow of control and Type implementations are sufficient, but can't provide the correct/complete environment the transformer is to be running in.
+This Type is for the situations where the existing flow of control and Type (Environmental, Algorithm, etc.) implementations are sufficient, but can't provide the *completely* correct environment the transformer needs to be running in.
 For example, needing to configure and listen on a message queue before running the rest of the transformer.
 
 There aren't any specifics behind this Type and the implementation details are up to the developers.
