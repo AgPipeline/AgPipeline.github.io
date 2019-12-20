@@ -11,9 +11,11 @@ If you are finding problems with the documentation, or have requests or ideas on
 # Documentation links
 <!-- Please provide links to the documents listed below -->
 <!-- Use the repository name in the "Transformer name" column" -->
-**Transformers**
+####Transformers 
 Before reading about specific transformers, it is helpful to be familiar with the [conceptual basis](https://agpipeline.github.io/transformers/transformers) for these transformers.
+Specifically [Environmental](https://agpipeline.github.io/transformers/environment) and [Algorithm](https://agpipeline.github.io/transformers/algorithm) concepts.
 
-| Transformer name | Technical link | How To link | 
-| ---------------- | -------------- | ----------- |
-| [template-rgb-plot](https://github.com/AgPipeline/template-rgb-plot) | [Technical](https://github.com/AgPipeline/AgPipeline.github.io/blob/master/transformers/template_rgb_plot.md) | [How To](https://github.com/AgPipeline/template-rgb-plot/blob/master/HOW_TO.md) |
+
+| Transformer name | Technical link | How To link | Comments |
+| ---------------- | -------------- | ----------- | -------- |
+| [template-rgb-plot](https://github.com/AgPipeline/template-rgb-plot) | [Technical](https://github.com/AgPipeline/AgPipeline.github.io/blob/master/transformers/template_rgb_plot.md) | [How To](https://github.com/AgPipeline/template-rgb-plot/blob/master/HOW_TO.md) | Code template for new Algorithms |
