@@ -34,19 +34,23 @@ As such, there are dependencies on [terrautils](https://github.com/terraref/terr
 
 **Note**: please refer the the [implementation of the Transformer class](https://github.com/AgPipeline/ua-gantry-transformer/blob/master/common-image/transformer_class.py) for an up-to-date description of what the class provides.
 
-To handle the majority of the transformers used to process the gantry data, the following variables, properties, and functions are defined in the AgPipeline's implementation of the [Transformer class](https://github.com/AgPipeline/ua-gantry-transformer/blob/master/common-image/transformer_class.py) (please refer to the class' implementation as the authoritative source of available variables, properties, and functions):
+To handle the majority of the Algorithm implementations used to process the gantry data, the following variables, properties, and functions are defined in the AgPipeline's implementation of the [Transformer class](https://github.com/AgPipeline/ua-gantry-transformer/blob/master/common-image/transformer_class.py) (please refer to the class' implementation as the authoritative source of available variables, properties, and functions).
 
-*variables*:<a name="transformer_variables" />
+*variables*:<a name="transformer_env_variables" />
 - sensor: the name of the sensor associated with the request (sensor as defined by [TERRA REF project](https://github.com/terraref/terrautils/blob/112d7b6032a677ebcc52868c41bd607e9b0af845/terrautils/sensors.py#L58))
 - args: command line arguments for the current request (see [argparse.ArgumentParser.parse_args()](https://docs.python.org/3/library/argparse.html))
 
-*properties*:<a name="transformer_properties" />
+*properties*:<a name="transformer_env_properties" />
 - default_epsg: this returns the EPSG code for the gantry system data and other data (such as plot boundaries) as an integer
-- sensor_name: this returns the value of the [sensor variable](#transformer_variables) in the class instance as a string
+- sensor_name: this returns the value of the [sensor variable](#transformer_env_variables) in the class instance as a string
 
-*functions*:<a name="transformer_functions" />
+*functions*:<a name="transformer_env_functions" />
 - get_image_file_epsg(path): returns the file's EPSG code as a string
 - get_image_file_geobounds(path): returns the file's geographic boundaries as a list of X and Y (check the documentation for exact order of returned values)
 - generate_transformer_md(): returns a dictionary containing Transformer attribution fields (name, description, version, author, repository)
 
- 
+To support the workflow, the following functions are implemented by the [Transformer class](https://github.com/AgPipeline/ua-gantry-transformer/blob/master/common-image/transformer_class.py) and should **not** be used elsewhere.
+
+- add_parameters(self, parser: argparse.ArgumentParser): adds parameters and other information for command line processing
+- get_transformer_params(self, args: argparse.Namespace, metadata: dict): prepares parameters which are passed on to Algorithm code
+- ~~retrieve_files(self, transformer_params: dict, metadata: list)~~: not implemented in this environment
