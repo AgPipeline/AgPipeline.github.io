@@ -7,7 +7,7 @@ In this document we will be providing an conceptual overview of the Algorithm co
 
 ## Overview
 The use of the term Algorithm appears to be nebulous in that implementations can range from processing raw sensor data to performing time based analysis of derived data.
-The unifying principle for Algorithm implementation is the manipulation of data.
+The unifying principle for Algorithm implementation is the transformation of data.
 For example, the Algorithm implementations for RGB processing in the AgPipeline includes converting the *.bin* files to a georeferenced *.tif* file, masking soil from the TIFFs, clipping images to plot boundaries, and calculating canopy cover from the plot-clipped TIFF data.
 
 By standardizing a minimal set of required file names and function signatures with return values, Algorithm implementations can more easily be used in different environments.
