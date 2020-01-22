@@ -4,6 +4,10 @@ This includes information on creating new transformers that are not templates.
 
 Additional information on our Data Science group can be found on our [University of Arizona site](https://datascience.cals.arizona.edu/) and on [OSF](https://osf.io/emq9s/).
 
+Each template transformer has a `HOW_TO.md` document that provides details on how to use the that template.
+Links to technical and HOW TO documentation are provided in the section below.
+Note that not all transformers will have HOW TO documentation, only the template ones.
+
 The term `transformer` refers to a algorithm that takes source data files and performs an action on the data.
 These actions can be transforming the source data, or calculating one or more values from it.
 Transformers can work with RGB, LAS, hyper-spectral, and other data types.
@@ -19,9 +23,11 @@ If you are finding problems with the documentation, or have requests or ideas on
 # Documentation links
 <!-- Please provide links to the documents listed below -->
 <!-- Use the repository name in the "Transformer name" column" -->
-**Transformers**\
-Before reading about specific transformers, it is helpful to be familiar with the [conceptual basis](https://github.com/AgPipeline/AgPipeline.github.io/blob/master/transformers/transformers.md) for these transformers.
 
-| Transformer name | Technical link | How To link | 
-| ---------------- | -------------- | ----------- |
-| [template-rgb-plot](https://github.com/AgPipeline/template-rgb-plot) | [Technical](https://github.com/AgPipeline/AgPipeline.github.io/blob/master/transformers/template_rgb_plot.md) | [How To](https://github.com/AgPipeline/template-rgb-plot/blob/master/HOW_TO.md) |
+###Transformers 
+Before reading about specific transformers, it is helpful to be familiar with the [conceptual basis](https://agpipeline.github.io/transformers/transformers) for these transformers.
+Specifically [Environmental](https://agpipeline.github.io/transformers/environment) and [Algorithm](https://agpipeline.github.io/transformers/algorithm) concepts.
+
+| Transformer name | Technical link | How To link | Comments |
+| ---------------- | -------------- | ----------- | -------- |
+| [template-rgb-plot](https://github.com/AgPipeline/template-rgb-plot) | [Technical](https://github.com/AgPipeline/AgPipeline.github.io/blob/master/transformers/template_rgb_plot.md) | [How To](https://github.com/AgPipeline/template-rgb-plot/blob/master/HOW_TO.md) | Code template for new Algorithms |
