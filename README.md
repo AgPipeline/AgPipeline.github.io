@@ -31,4 +31,4 @@ Specifically [Environmental](https://agpipeline.github.io/transformers/environme
 | Transformer name | Technical link | How To link | Comments |
 | ---------------- | -------------- | ----------- | -------- |
 | [template-rgb-plot](https://github.com/AgPipeline/template-rgb-plot) | [Technical](https://github.com/AgPipeline/AgPipeline.github.io/blob/master/transformers/template_rgb_plot.md) | [How To](https://github.com/AgPipeline/template-rgb-plot/blob/master/HOW_TO.md) | Code template for new Algorithms |
-| [template-lidar-plot](https://github.com/AgPipeline/template-lidar-plot) | [Technical]() | [How To](https://github.com/AgPipeline/template-lidar-plot/blob/master/HOW_TO.md) | Code template for new Algorithms |
+| [template-lidar-plot](https://github.com/AgPipeline/template-lidar-plot) | [Technical](https://github.com/AgPipeline/AgPipeline.github.io/blob/master/transformers/template_lidar_plot.md) | [How To](https://github.com/AgPipeline/template-lidar-plot/blob/master/HOW_TO.md) | Code template for new Algorithms |

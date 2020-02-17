@@ -1,4 +1,4 @@
-# RGB Plot Transformer - Technical information
+# Lidar Plot Transformer - Technical information
 This document contain information on what the goals of this Transformer are and how the repository is structured.
 Also, information on the contents and intent of each of the executable and dependency files is provided (dependency files are files that upstream components are dependent upon).
 
@@ -10,13 +10,13 @@ We also provide a testing mechanism that can be used to prove the algorithm impl
 This testing mechanism can also be used to track down issues arising in an active processing pipeline.
 
 ## Files
-This section provides technical information on the contents of the file found in the [repository](https://github.com/AgPipeline/template-rgb-plot).
+This section provides technical information on the contents of the file found in the [repository](https://github.com/AgPipeline/template-lidar-plot).
 
 This section is not intended to provide information on all the files in the repository, or to replace or document what is implemented in the code.
 There are files in the repository that conform to convention, such as '.gitignore' and are documented elsewhere.
 It is expected that the contents of the files are sufficiently documented so that external documentation isn't needed; this is not to say that there isn't external documentation generated from the source files, only that it's not to be found here.
 
-### algorithm_rgb.py <a name="algorithm_rgb" />
+### algorithm_lidar.py <a name="algorithm_lidar" />
 This is the main file for the algorithm implementation.
 Its intent is to keep everything that is specific to the algorithm in one place; to serve as the main entry point.
 
@@ -26,7 +26,7 @@ This is anticipated and acceptable.
 Note that the default Dockerfile that is [generated](#generate) copies all `.py` files, but not any other file types.
 
 ## generate.py <a name="generate" />
-This executable python script creates the Dockerfile based upon the contents of the [algorithm_rgb.py](#algorithm_rgb) file.
+This executable python script creates the Dockerfile based upon the contents of the [algorithm_lidar.py](#algorithm_lidar) file.
 Additionally empty `requirements.txt` and `packages.txt` files are generated.
 These last two can be used to install Python modules and system packages needed by the algorithm into a Docker image.
 
@@ -34,8 +34,8 @@ The raw Dockerfile contents are stored as a list of strings in this file.
 These strings are modified as needed when writing Dockerfile.
 The decision to use this approach, instead of using template files, was made to reduce the footprint of the repository, and to keep the Docker related information in one spot.
 
-The script, when run, first checks that expected top-level variables are defined in the algorithm_rgb.py file and that some of these variables are not empty.
-Depending upon what the intent of a variable is, it's possible to get away with keeping them empty in the algorithm_rgb.py file.
+The script, when run, first checks that expected top-level variables are defined in the algorithm_lidar.py file and that some of these variables are not empty.
+Depending upon what the intent of a variable is, it's possible to get away with keeping them empty in the algorithm_lidar.py file.
 
 Once the script has verified the environment, it create the empty files and creates a Dockerfile, all of which can be used to build a Docker image.
 
