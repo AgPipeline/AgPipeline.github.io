@@ -88,6 +88,8 @@ Please refer to the [Environmental documentation](https://agpipeline.github.io/t
 ### Algorithm <a name="algorithm" />
 Now that the workflow is defined by the [Entry Point](#entry-point) Type and the environment is standardized by the [Environmental](#environment) Type, the algorithm can focus on processing the data it receives.
 
+Refer the [Algorithm](https://agpipeline.github.io/transformers/algorithm) page for a more technical description of this Type.
+
 Algorithms can be everything from [scrubbing and standardizing metadata](https://github.com/uacic/transformer-cleanmetadata) to [calculating canopy cover](https://github.com/AgPipeline/transformer-canopycover) on a plot-level basis.
 When combined with the workflow implemented by the [Entry Point](#entry-point) Type and a specific [Environmental](#environment) Type, one has a complete Transformer.
 
