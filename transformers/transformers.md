@@ -75,6 +75,8 @@ Refer to the [Override Entry Point](#override) documentation for more informatio
 The purpose of the Environmental Type is to interpret the context that a transformer is running in and to provide a consistent interface into that context on a per-request basis.
 This is accomplished logistically by encapsulating the context in a class and passing an instance of that class to the [Algorithm](#algorithm) Type.
 
+Refer to the [Environment](https://agpipeline.github.io/transformers/environment) page for a more technical description of this Type.
+
 What this means in practical terms is that transformers for different environments can use the same [Entry Point](#entry-point) and [Algorithm](#algorithm) code.
 In the AgPipeline code base, this is accomplished by creating different implementations of the Transformer class.
 For example, the common_image folder in the [ua-gantry-environment](https://github.com/uacic/ua-gantry-environment/tree/master/common-image) repository, or the base_transformer_class folder in the [drone-pipeline-environment](https://github.com/AgPipeline/drone-pipeline-environment/tree/master/base-transformer-class) repository.

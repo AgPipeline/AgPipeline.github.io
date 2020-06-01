@@ -1,12 +1,12 @@
 # Environmental
-This is the name given to the portion of a transformer that provides the runtime environment.
+This is the name given to the portion of a transformer that standardizes the runtime environment.
 
-Please read the [Transformers](https://github.com/AgPipeline/AgPipeline.github.io/blob/master/transformers/transformers.md) overview documentation for some additional context.
+Please read the [Transformers](https://agpipeline.github.io/transformers/transformers) overview documentation for some additional context.
 
 In this document we will be providing an conceptual overview of the Environmental code structure and then uses the implementation of the UA makeflow solution as a practical example.
 
 ## Overview
-As mentioned above, the intention of an Environment Transformer is to provide an organized runtime environment.
+As mentioned above, the intention of an Environment Transformer is to provide an standardized runtime environment.
 This allows the algorithms to become simplified since they don't need to bother with the details of what their actual environment is.
 
 As implemented in the AgPipeline makeflow environment, the flow of control through a transformer can support both a messaging system that triggers the transformer, or running directly from a command line.
@@ -20,21 +20,20 @@ This allows for the easy customization of run-time environments for any Algorith
 
 ### Transformer class
 As mentioned above, this class resides in a file named `transformer_class.py` and is referenced by the Entry Point and Algorithm code of a Transformer.
-The [Entry Point]() provides the execution framework of a transformer while the [Algorithm]() does the work.
-Both of these rely on the Transformer class to provide an well defined runtime context.
+The [Entry Point]() provides the execution framework of a transformer while the [Algorithm](https://agpipeline.github.io/transformers/algorithm) does the work.
+Both of these rely on the Transformer class to provide a suitable and well defined runtime context.
 
-With the AgPipeline, the Entry Point implementation expects the Transformer class to provide a (mandatory) *get_transformer_params()* function that arranges function parameters for algorithms, and to provide some (implementation dependent) functions for defining command line parameters and downloading data.
+With the AgPipeline, the Entry Point implementation expects the Transformer class to provide a (mandatory) *get_transformer_params()* function that arranges function parameters for algorithms, and to provide some optional functions (optionality is implementation dependent) for defining command line parameters and downloading data.
 What this means is that the Transformer class needs to provide the data Algorithm code expects in the format expected.
 Additionally, since Algorithms receive an instance of the Transformer class as a parameter, they also expect any additional, necessary, functions to be implemented by the class.
 To simplify the development of Transformer classes, the AgPipeline defines a standard interface for all Algorithms; satisfying these interface requirements means that an implementation of a single Transformer class can be used by any of these Algorithms.
 
 ## AgPipeline Implementation
 The AgPipeline is descended from the [TERRA REF](https://github.com/terraref) project as described in the [Organization Info](https://github.com/AgPipeline/Organization-info) repository and elsewhere.
-As such, there are dependencies on [terrautils](https://github.com/terraref/terrautils) which is a [Python library](https://pypi.org/project/terrautils/) and the metadata provided by the [gantry](https://terraref.org/) system.
 
-**Note**: please refer the the [implementation of the Transformer class](https://github.com/AgPipeline/ua-gantry-transformer/blob/master/common-image/transformer_class.py) for an up-to-date description of what the class provides.
+**Note**: please refer the the [implementation of the Transformer class](https://github.com/AgPipeline/drone-pipeline-environment/blob/master/base-transformer-class/transformer_class.py) for an up-to-date information of what the class provides.
 
-To handle the majority of the Algorithm implementations used to process the gantry data, the following variables, properties, and functions are defined in the AgPipeline's implementation of the [Transformer class](https://github.com/AgPipeline/ua-gantry-transformer/blob/master/common-image/transformer_class.py) (please refer to the class' implementation as the authoritative source of available variables, properties, and functions).
+To handle the majority of the Algorithm implementations used to process the data, the following variables, properties, and functions are defined in the AgPipeline's implementation of the [Transformer class](https://github.com/AgPipeline/drone-pipeline-environment/blob/master/base-transformer-class/transformer_class.py) (please refer to the class' implementation as the authoritative source of available variables, properties, and functions).
 
 *variables*:<a name="transformer_env_variables" />
 - sensor: the name of the sensor associated with the request (sensor as defined by [TERRA REF project](https://github.com/terraref/terrautils/blob/112d7b6032a677ebcc52868c41bd607e9b0af845/terrautils/sensors.py#L58))
@@ -49,8 +48,7 @@ To handle the majority of the Algorithm implementations used to process the gant
 - get_image_file_geobounds(path): returns the file's geographic boundaries as a list of X and Y (check the documentation for exact order of returned values)
 - generate_transformer_md(): returns a dictionary containing Transformer attribution fields (name, description, version, author, repository)
 
-Other functions: to support the workflow, the following functions are implemented by the [Transformer class](https://github.com/AgPipeline/ua-gantry-transformer/blob/master/common-image/transformer_class.py) and should **not** be used elsewhere.
+Other functions: to support the workflow, the following functions are implemented by the [Transformer class](https://github.com/AgPipeline/drone-pipeline-environment/blob/master/base-transformer-class/transformer_class.py) and should **not** be used elsewhere.
 
 - add_parameters(self, parser: argparse.ArgumentParser): adds parameters and other information for command line processing
 - get_transformer_params(self, args: argparse.Namespace, metadata: dict): prepares parameters which are passed on to Algorithm code
-- ~~retrieve_files(self, transformer_params: dict, metadata: list)~~: not implemented in this environment
