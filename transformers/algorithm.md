@@ -21,7 +21,7 @@ As implemented in the AgPipeline makeflow environment, Algorithm provide the fol
 At a minimum, an instance of the environment, provided by the Transformer class, is passed in when checking the runtime environment and when processing data.
 For the AgPipeline [[Environment Transformer class implementation](https://github.com/AgPipeline/drone-pipeline-environment/blob/master/base-transformer-class/transformer_class.py), additional data is also provided in the form of curated metadata and transformer metadata.
 
-## AgPipeline Overview
+## AgPipeline Implementation
 There is one mandatory function that needs to be defined, and several other optional functions, for an Algorithm implementation.
 Outside of these pre-defined function signatures (signatures are: function name, their parameters, and return values) Algorithm implementations are free to add whatever functions, files, data, API calls, etc. that's necessary for their processing.
 
