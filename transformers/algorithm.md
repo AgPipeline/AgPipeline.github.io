@@ -1,7 +1,7 @@
 # Algorithm
 This is the name given to the portion of a transformer that provides the analysis and/or transformation of data.
 
-Please read the [Transformers](https://github.com/AgPipeline/AgPipeline.github.io/blob/master/transformers/transformers.md) overview documentation for some additional context.
+Please read the [Transformers](https://agpipeline.github.io/transformers/transformers) overview documentation for some additional context.
 
 In this document we will be providing an conceptual overview of the Algorithm code structure and its implementation framework for the UA makeflow solution.
 
@@ -19,7 +19,7 @@ As implemented in the AgPipeline makeflow environment, Algorithm provide the fol
 3. Process the data and returning a result
 
 At a minimum, an instance of the environment, provided by the Transformer class, is passed in when checking the runtime environment and when processing data.
-For the AgPipeline [[Environment Transformer class implementation](https://github.com/AgPipeline/ua-gantry-environment/blob/master/common-image/transformer_class.py), additional data is also provided in the form of curated metadata, transformer metadata, and gantry metadata.
+For the AgPipeline [[Environment Transformer class implementation](https://github.com/AgPipeline/drone-pipeline-environment/blob/master/base-transformer-class/transformer_class.py), additional data is also provided in the form of curated metadata and transformer metadata.
 
 ## AgPipeline Overview
 There is one mandatory function that needs to be defined, and several other optional functions, for an Algorithm implementation.
