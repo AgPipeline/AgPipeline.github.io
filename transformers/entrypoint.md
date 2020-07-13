@@ -3,7 +3,7 @@ This is the name given to the portion of a transformer that provides the flow of
 
 Please read the [Transformers](https://agpipeline.github.io/transformers/transformers) overview documentation for some additional context.
 
-In this document we will be providing an conceptual overview of the Entry Point code structure and then uses the implementation of the UA makeflow solution as a practical example.
+In this document we will be providing an conceptual overview of the Entry Point code structure and then use the implementation of the UA makeflow solution as a practical example.
 
 ## Overview
 The main intention of an Entry Point Type is to provide the flow of control through a Transformer.
