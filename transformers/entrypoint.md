@@ -18,6 +18,7 @@ The flow of control through Entry Point is not expected to be immutable.
 The flow of control can be altered by definitions, function declarations, and other means.
 
 ## AgPipeline Implementation
+
 In AgPipeline the file `entrypoint.py` file implements the Entry Point Type.
 
 First an instance of the Environment is created (an instance of `transformer_class`).
