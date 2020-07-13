@@ -7,6 +7,7 @@ Please read the [Transformers](https://agpipeline.github.io/transformers/transfo
 In this document we will be providing an conceptual overview of the Entry Point code structure and then use the implementation of the UA makeflow solution as a practical example.
 
 ## Overview
+
 The main intention of an Entry Point Type is to provide the flow of control through a Transformer.
 By providing a common flow of execution through all Transformers the task of implementing a complete Transformer is simplified.
 Developers can focus on [Environment](https://agpipeline.github.io/transformers/environment) and/or [Algorithm](https://agpipeline.github.io/transformers/algorithm) specifics without worrying how to hook them together.
