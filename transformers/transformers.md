@@ -57,6 +57,8 @@ Each of the Type subsections provided here has information on its intent along w
 As the name implies, this is considered the entry point to a transformer.
 The purpose of the entry point is to provide a common flow of control that each transformer can utilize, and a basic set of command line parameters common to all derived transformers.
 
+Refer to the [Entry Point](https://agpipeline.github.io/transformers/entrypoint) page for a more technical description of this Type.
+
 While the entry point defines the flow of control through a transformer, it doesn't have an expectation for the data the [Environmental](#environment) or [Algorithm](#algorithm) Types receive.
 For example, the default `Entry Point` in the AgPipeline [base-docker-support](https://github.com/AgPipeline/base-docker-support) implementation uses a dict to allow each implementation of the `Environment` Type to define its set of parameters to pass to the `Algorithm` implementation.
 The contents of this dict is defined by the Environment and Algorithm code, and not by the Entry Point code.
@@ -90,7 +92,7 @@ Please refer to the [Environmental documentation](https://agpipeline.github.io/t
 ### Algorithm <a name="algorithm" />
 Now that the workflow is defined by the [Entry Point](#entry-point) Type and the environment is standardized by the [Environmental](#environment) Type, the algorithm can focus on processing the data it receives.
 
-Refer the [Algorithm](https://agpipeline.github.io/transformers/algorithm) page for a more technical description of this Type.
+Refer to the [Algorithm](https://agpipeline.github.io/transformers/algorithm) page for a more technical description of this Type.
 
 Algorithms can be everything from [scrubbing and standardizing metadata](https://github.com/uacic/transformer-cleanmetadata) to [calculating canopy cover](https://github.com/AgPipeline/transformer-canopycover) on a plot-level basis.
 When combined with the workflow implemented by the [Entry Point](#entry-point) Type and a specific [Environmental](#environment) Type, one has a complete Transformer.
