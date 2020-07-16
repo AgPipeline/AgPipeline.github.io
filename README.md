@@ -4,15 +4,17 @@ This includes information on creating new transformers that are not templates.
 
 Additional information on our Data Science group can be found on our [University of Arizona site](https://datascience.cals.arizona.edu/) and on [OSF](https://osf.io/emq9s/).
 
+### Transformer usage
 The term `transformer` refers to a algorithm that takes source data files and performs an action on the data.
 These actions can be transforming the source data, or calculating one or more values from it.
 Transformers can work with RGB, LAS, hyper-spectral, and other data types.
 
-To assist in the development of transformers, `template transformers` are provided with the intent of simplifying the development of new algorithms.
+### Template Transformer usage
+To assist in the development of transformers, `template transformers` repositories are provided with the intent of simplifying the development of new algorithms.
 Template transformer's repository names start with `template`.
-Each template transformer has a `HOW_TO.md` document that provides details on how to use the that template.
-Links to technical and HOW TO documentation are provided in the section below.
-Note that not all transformers will have **HOW TO** documentation, only the template ones.
+Each template transformer repository has a `HOW_TO.md` document that provides details on how to use the that template.
+Links to technical and **HOW TO** documentation are provided in the section below.
+Note that not all transformers repositories will have **HOW TO** documentation, only the template ones.
 
 If you are finding problems with the documentation, or have requests or ideas on how to improve the documentation, please create an [issue](https://github.com/AgPipeline/computing-pipeline/issues/new/choose) so that we can work on it.
 
