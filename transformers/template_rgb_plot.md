@@ -1,8 +1,10 @@
 # RGB Plot Transformer - Technical information
+
 This document contain information on what the goals of this Transformer are and how the repository is structured.
 Also, information on the contents and intent of each of the executable and dependency files is provided (dependency files are files that upstream components are dependent upon).
 
 ## Goals
+
 The fundamental goal of this repository is to make it as easy as possible for plant science researchers to implement their algorithms for incorporation into processing pipelines.
 To that end, we provide a standard interface, and request minimal configuration on the part of the researcher/developer.
 
@@ -10,6 +12,7 @@ We also provide a testing mechanism that can be used to prove the algorithm impl
 This testing mechanism can also be used to track down issues arising in an active processing pipeline.
 
 ## Files
+
 This section provides technical information on the contents of the file found in the [repository](https://github.com/AgPipeline/template-rgb-plot).
 
 This section is not intended to provide information on all the files in the repository, or to replace or document what is implemented in the code.
@@ -17,6 +20,7 @@ There are files in the repository that conform to convention, such as '.gitignor
 It is expected that the contents of the files are sufficiently documented so that external documentation isn't needed; this is not to say that there isn't external documentation generated from the source files, only that it's not to be found here.
 
 ### algorithm_rgb.py <a name="algorithm_rgb" />
+
 This is the main file for the algorithm implementation.
 Its intent is to keep everything that is specific to the algorithm in one place; to serve as the main entry point.
 
@@ -25,7 +29,23 @@ This is anticipated and acceptable.
 
 Note that the default Dockerfile that is [generated](#generate) copies all `.py` files, but not any other file types.
 
+### calculate() function
+
+The _calculate()_ function gets called upon to calculate the values from a loaded image.
+This function may get called multiple times; once for each image loaded.
+It receives one parameter which is a [numpy.ndarray](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html) containing the loaded image.
+
+Depending upon the image, there may be one or more alpha channels associated with the image defining transparency.
+There are many purposes for an alpha channel, including indicating which pixels are fully transparent and not important.
+
+**Image with Alpha Channel** \
+<img href="https://user-images.githubusercontent.com/45463434/94734883-b8d80880-031e-11eb-87ec-5509cc2665d1.png" />
+
+**Image with Alpha Channel Removed** \
+<img href="https://user-images.githubusercontent.com/45463434/94734957-db6a2180-031e-11eb-9d88-647fbf40a86a.png" />
+
 ## generate.py <a name="generate" />
+
 This executable python script creates the Dockerfile based upon the contents of the [algorithm_rgb.py](#algorithm_rgb) file.
 Additionally empty `requirements.txt` and `packages.txt` files are generated.
 These last two can be used to install Python modules and system packages needed by the algorithm into a Docker image.
@@ -43,6 +63,7 @@ The script is not intended to run silently.
 It will print which stage its on and any problems or concerns it comes across.
 
 ## testing.py <a name="testing" />
+
 The intent behind this executable script it to allow the algorithm developer to test their implementation in a way that provides a high degree of certainty that it will succeed in a processing pipeline.
 This script is not intended to replicate the environment of a processing pipeline. 
 
