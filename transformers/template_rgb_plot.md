@@ -38,6 +38,7 @@ This function may get called multiple times; once for each image loaded.
 It receives one parameter which is a [numpy.ndarray](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html) containing the loaded image.
 
 #### Alpha Channel <a name="alpha_channel" />
+
 Depending upon the image, there may be one or more alpha channels associated with the image defining transparency.
 There are many purposes for an alpha channel, including indicating which pixels are fully transparent and not important.
 This section will focus on the pixels that have an associated alpha channel value of 0 (zero) indicating they are fully transparent.
