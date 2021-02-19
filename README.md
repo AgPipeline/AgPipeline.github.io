@@ -30,5 +30,5 @@ Below you can find links for specific transformers, including template transform
 
 | Transformer name | Technical link | How To link | Comments |
 | ---------------- | -------------- | ----------- | -------- |
-| [template-rgb-plot](https://github.com/AgPipeline/template-rgb-plot) | [Technical](https://agpipeline.github.io/transformers/template_rgb_plot) | [How To](https://github.com/AgPipeline/template-rgb-plot/blob/master/HOW_TO.md) | Code template for new Algorithms |
-| [template-lidar-plot](https://github.com/AgPipeline/template-lidar-plot) | [Technical](https://agpipeline.github.io/transformers/template_lidar_plot) | [How To](https://github.com/AgPipeline/template-lidar-plot/blob/master/HOW_TO.md) | Code template for new Algorithms |
+| [template-rgb-plot](https://github.com/AgPipeline/template-rgb-plot) | [Technical](https://agpipeline.github.io/transformers/template_rgb_plot) | [How To](https://github.com/AgPipeline/template-rgb-plot/blob/main/HOW_TO.md) | Code template for new Algorithms |
+| [template-lidar-plot](https://github.com/AgPipeline/template-lidar-plot) | [Technical](https://agpipeline.github.io/transformers/template_lidar_plot) | [How To](https://github.com/AgPipeline/template-lidar-plot/blob/main/HOW_TO.md) | Code template for new Algorithms |
